@@ -1,0 +1,48 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Student Exam Performance Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        
+        <div class="mb-3">
+            <label class="form-label">Subject 2</label>
+            <input class="form-control" type="number" name="second"
+                placeholder="Enter your Score" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Subject 3</label>
+            <input class="form-control" type="number" name="third"
+                placeholder="Enter your score" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Subject 4</label>
+            <input class="form-control" type="number" name="fourth"
+                placeholder="Enter your score" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Subject 5</label>
+            <input class="form-control" type="number" name="fifth"
+                placeholder="Enter your score" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select class="form-control" name="gender" placeholder="Enter you Gender" required>
+                <option class="placeholder" selected disabled value="">Select your Gender</option>
+                <option value="Male">
+                    Male
+                </option>
+                <option value="Female">
+                    Female
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Score" required/>
+        </div>
+    </form>
+    <h2>
+       The  prediction is {{results}}
+    </h2>
+   <body>
+</html>
